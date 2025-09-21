@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio of Naresh Choudhary, a video editor specializing in short-form content, motion graphics, and After Effects animations.">
+    <title>Naresh Choudhary - Video Editor</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+    --bg-color: #0A0E1A; /* Updated from #0B0B0B */
+    --accent-color: #4DB8FF; /* Changed from #FFD447 */
+    --secondary-color: #B3B3B3; /* Kept for contrast */
+    --glow-color: rgba(77, 184, 255, 0.4); /* Changed from rgba(255, 212, 71, 0.4) */
+}
+        body {
+            background-color: var(--bg-color);
+            color: white;
+            font-family: 'SFPRODISPLAYMEDIUM.OTF',sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            letter-spacing: -0.025em;
+        }
+        h1, h2, h3 {
+            font-family: 'SFPRODISPLAYMEDIUM.OTF', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+            color: white;
+        }
+        /* Custom scrollbar for the carousel */
+        .carousel-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .carousel-container::-webkit-scrollbar-track {
+            background: #1a1a1a;
+            border-radius: 10px;
+        }
+        .carousel-container::-webkit-scrollbar-thumb {
+            background-color: var(--accent-color);
+            border-radius: 10px;
+            border: 2px solid #1a1a1a;
+        }
+
+        .highlight-word {
+  color: var(--accent-color);
+}
+
+
+/* Then you can use it like this */
+body {
+  font-family: "YourCustomFontName", sans-serif;
+}
+
+        /* Keyframes for the hero star glow */
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+
+        /* Keyframes for fade-up animation */
+        .fade-up-element {
+            opacity: 0;
+            transform: translateY(2rem);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-up-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Portfolio section title underline animation */
+        .title-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .title-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.6s ease-out;
+            transform-origin: left;
+        }
+        .title-underline.is-visible::after {
+            width: 100%;
+        }
+
+        /* Glass-morphism for header pill */
+        .glass-header-pill {
+            background-color: rgba(11, 11, 11, 0.2);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Inline image placeholder in the text */
+        .inline-accent-placeholder {
+            display: inline-block;
+            width: 0.6em; /* Adjust size based on font-size */
+            height: 0.6em;
+            background-color: var(--accent-color);
+            border-radius: 4px;
+            margin-right: 0.25rem;
+            vertical-align: middle;
+        }
+        .social-card {
+            background-color: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 212, 71, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-300">
+
+    <!-- Header / Navigation (Pill-shaped) -->
+    <header class="fixed top-0 left-0 w-full z-50 py-6 transition-all duration-300 ease-in-out">
+        <div class="glass-header-pill max-w-fit mx-auto px-6 py-2 rounded-full flex items-center justify-between space-x-8 lg:space-x-12">
+            <!-- Logo -->
+            <a href="#hero" class="text-xl font-bold text-gray-100 flex items-center">
+                <span class="text-3xl text-[var(--accent-color)] leading-none -mt-1 mr-2">✦</span>
+                <span class="font-poppins text-lg hidden md:block">Naresh Choudhary</span>
+            </a>
+            <!-- Menu Items -->
+            <nav class="flex items-center space-x-8 lg:space-x-12">
+                <a href="#portfolio" class="text-gray-400 hover:text-[var(--accent-color)] transition-colors duration-300 ease-in-out">Portfolio</a>
+                <a href="#contact" class="hidden md:block px-6 py-2 rounded-full border border-gray-700 bg-gray-800 text-[var(--accent-color)] font-semibold hover:border-[var(--accent-color)] hover:bg-[var(--glow-color)] transition-all duration-300 ease-in-out whitespace-nowrap">
+                    Contact Me
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-6 lg:px-24">
+        <!-- Hero Section -->
+        <section id="hero" class="h-screen flex items-center justify-center text-center relative">
+            <div class="relative z-10 fade-up-element">
+                <div class="mb-4 text-xs font-semibold uppercase tracking-wide text-[var(--accent-color)] flex items-center justify-center">
+                    <span class="inline-block w-2 h-2 rounded-full bg-[var(--accent-color)] mr-2"></span>
+                    +1 Spots Available
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold max-w-4xl mx-auto leading-tight md:leading-tight lg:leading-tight">
+                    Short-Form <span class="highlight-word"> Video Editing </span>  <br> <span class="inline-accent-placeholder"> <img src="C:\Users\Naresh\Downloads\vecteezy_four-pointed-star-shape_59879953.png"></img> </span> for Brands & Creators 
+                </h1>
+            </div>
+
+            <!-- Center Glowing Star  -->
+            <div class="absolute bottom-0 inset-x-0 -z-10 flex items-end justify-center">
+                <div id="parallax-star" class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+                      
+                    <svg class="absolute inset-0 w-full h-full text-[var(--accent-color)] animate-[pulse-glow_5s_infinite_ease-in-out] filter blur-[30px] opacity-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.34L22 9.27l-5 4.88L18.18 22 12 18.78 5.82 22 7 14.15l-5-4.88 6.91-1.03L12 2z"/>
+                    </svg>
+                     
+                    <div class="absolute inset-0 rounded-full blur-3xl opacity-10 animate-[pulse-glow_5s_infinite_ease-in-out]" style="background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);"></div>
+                </div>
+            </div>
+           
+        </section>
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="pt-[120px] fade-up-element">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12">
+                My Latest <span class="title-underline">Projects</span> – Short Form
+            </h2>
+            <!-- Video Carousel -->
+            <div class="relative">
+                <div id="carousel" class="carousel-container flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 cursor-grab active:cursor-grabbing">
+                    <!-- Carousel Item 1 -->
+                    <div class="min-w-[320px] snap-center rounded-xl overflow-hidden shadow-lg transition-all duration-0.3s ease-in-out hover:scale-105 hover:shadow-[0_0_25px_5px_rgba(255,212,71,0.2)]">
+                        <div class="relative w-full aspect-[9/16] bg-gray-900">
+                            <iframe 
+                                class="absolute top-0 left-0 w-full h-full lazy-video" 
+                                data-src="https://www.youtube.com/embed/YcT5bDzvbno?feature=share" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>
+                    <!-- Carousel Item 2 -->
+                    <div class="min-w-[320px] snap-center rounded-xl overflow-hidden shadow-lg transition-all duration-0.3s ease-in-out hover:scale-105 hover:shadow-[0_0_25px_5px_rgba(255,212,71,0.2)]">
+                        <div class="relative w-full aspect-[9/16] bg-gray-900">
+                            <iframe 
+                                class="absolute top-0 left-0 w-full h-full lazy-video" 
+                                data-src="https://www.youtube.com/embed/3gvWhq6bFX4?feature=share" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>
+                    <!-- Carousel Item 3 -->
+                    <div class="min-w-[320px] snap-center rounded-xl overflow-hidden shadow-lg transition-all duration-0.3s ease-in-out hover:scale-105 hover:shadow-[0_0_25px_5px_rgba(255,212,71,0.2)]">
+                        <div class="relative w-full aspect-[9/16] bg-gray-900">
+                            <iframe 
+                                class="absolute top-0 left-0 w-full h-full lazy-video" 
+                                data-src="https://www.youtube.com/embed/W7eHQodLDGU?feature=share" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>
+                    <!-- Carousel Item 4 -->
+                    <div class="min-w-[320px] snap-center rounded-xl overflow-hidden shadow-lg transition-all duration-0.3s ease-in-out hover:scale-105 hover:shadow-[0_0_25px_5px_rgba(255,212,71,0.2)]">
+                        <div class="relative w-full aspect-[9/16] bg-gray-900">
+                            <iframe 
+                                class="absolute top-0 left-0 w-full h-full lazy-video" 
+                                data-src="https://www.youtube.com/embed/pg3HagQGOWs?feature=share" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreenhttps
+                            ></iframe>
+                        </div>
+                    </div>
+                    <!-- Carousel Item 5 -->
+                    <div class="min-w-[320px] snap-center rounded-xl overflow-hidden shadow-lg transition-all duration-0.3s ease-in-out hover:scale-105 hover:shadow-[0_0_25px_5px_rgba(255,212,71,0.2)]">
+                        <div class="relative w-full aspect-[9/16] bg-gray-900">
+                            <iframe 
+                                class="absolute top-0 left-0 w-full h-full lazy-video" 
+                                data-src="https://www.youtube.com/embed/j_eYsJTbDE8?feature=share" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>
+                    <!-- Carousel Item 6 -->
+                    <div class="min-w-[320px] snap-center rounded-xl overflow-hidden shadow-lg transition-all duration-0.3s ease-in-out hover:scale-105 hover:shadow-[0_0_25px_5px_rgba(255,212,71,0.2)]">
+                        <div class="relative w-full aspect-[9/16] bg-gray-900">
+                            <iframe 
+                                class="absolute top-0 left-0 w-full h-full lazy-video" 
+                                data-src="https://www.youtube.com/embed/hZhTDD75nN4?feature=share" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation Buttons (hidden on mobile) -->
+                <button id="scrollLeft" class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded-full text-[var(--accent-color)] hover:bg-[var(--accent-color)] hover:text-black transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="scrollRight" class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded-full text-[var(--accent-color)] hover:bg-[var(--accent-color)] hover:text-black transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="pt-[120px] fade-up-element">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12">
+                About Me
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-12 items-start">
+                <!-- Left: Profile Image or Logo -->
+                <div class="flex items-start justify-center md:justify-start">
+                    <div class="w-40 h-40 sm:w-56 sm:h-56 rounded-full overflow-hidden border border-[var(--accent-color)] bg-gray-900 flex items-center justify-center">
+                        <img src="C:\Users\Naresh\OneDrive\Pictures\Screenshots\narexh.png" alt="Naresh Choudhary Logo" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <!-- Right: Bio and Tools -->
+                <div>
+                    <p class="text-[var(--secondary-color)] text-lg mb-8 leading-relaxed max-w-2xl">
+                        I am Naresh Choudhary, a professional video editor with a passion for creating engaging and high-impact short-form content. With a strong background in After Effects, Premiere Pro, and motion graphics, I specialise in transforming raw footage into captivating narratives for social media platforms. My expertise extends to detailed face-cam edits, dynamic text animations, and cinematic colour grading, ensuring every second of your video counts. I thrive on collaborating with creators to bring their visions to life, delivering polished, performance-driven content that resonates with audiences.
+                    </p>
+                    <div class="flex items-center space-x-6">
+                        <span class="text-sm font-semibold uppercase tracking-wide">Tools:</span>
+                        <!-- After Effects -->
+                        <img src="https://placehold.co/48x48/0b0b0b/B3B3B3?text=Ae" alt="Adobe After Effects" class="h-10 opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                        <!-- Premiere Pro -->
+                        <img src="https://placehold.co/48x48/0b0b0b/B3B3B3?text=Pr" alt="Adobe Premiere Pro" class="h-10 opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                        <!-- Photoshop -->
+                        <img src="https://placehold.co/48x48/0b0b0b/B3B3B3?text=Ps" alt="Adobe Photoshop" class="h-10 opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="pt-[120px] fade-up-element">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 text-center">
+                Let's Work Together 
+            </h2>
+            <h5 class="text-1xl sm:text-2xl lg:text-2xl font-bold mb-8 text-center"> E-mail : contact.nareshdesigns@gmail.com</h5>
+            <div class="max-w-xl mx-auto">
+                <!-- Form -->
+                <form action="mailto:contact.nareshdesigns@gmail.com" method="post" enctype="text/plain" class="space-y-6">
+                    <div>
+                        <input type="text" name="name" placeholder="Your Name" class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:border-[var(--accent-color)] focus:ring-1 focus:ring-[var(--accent-color)] transition-all duration-300">
+                    </div>
+                    <div>
+                        <input type="email" name="email" placeholder="Your Email" class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:border-[var(--accent-color)] focus:ring-1 focus:ring-[var(--accent-color)] transition-all duration-300">
+                    </div>
+                    <div>
+                        <textarea name="message" rows="5" placeholder="Your Message" class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:border-[var(--accent-color)] focus:ring-1 focus:ring-[var(--accent-color)] transition-all duration-300"></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3 rounded-full border border-[var(--accent-color)] text-[var(--accent-color)] font-semibold hover:bg-[var(--glow-color)] transition-all duration-300 ease-in-out">
+                        Start a Project
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- New Footer Section -->
+        
+        <section class="py-12 px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Instagram Card -->
+                <a href="https://www.instagram.com/narexh/" target="_blank" class="social-card p-6 rounded-xl flex items-center justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold flex items-center mb-2">
+                            <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c-3.195 0-3.606 0-4.851.071-1.24.06-2.039.248-2.753.535-.7.283-1.298.718-1.871 1.291-.573.573-1.008 1.171-1.291 1.871-.287.714-.475 1.513-.535 2.753-.071 1.245-.071 1.656-.071 4.851s0 3.606.071 4.851c.06 1.24.248 2.039.535 2.753.283.7.718 1.298 1.291 1.871.573.573 1.171 1.008 1.871 1.291.714.287 1.513.475 2.753.535 1.245.071 1.656.071 4.851.071s3.606 0 4.851-.071c1.24-.06 2.039-.248 2.753-.535.7-.283 1.298-.718 1.871-1.291.573-.573 1.008-1.171 1.291-1.871.287-.714.475-1.513.535-2.753.071-1.245.071-1.656.071-4.851s0-3.606-.071-4.851c-.06-1.24-.248-2.039-.535-2.753-.283-.7-.718-1.298-1.291-1.871-.573-.573-1.171-1.008-1.871-1.291-.714-.287-1.513-.475-2.753-.535-1.245-.071-1.656-.071-4.851-.071zm0 2.2c3.09 0 3.486 0 4.69.062 1.18.058 1.7.234 2.072.388.468.192.83.414 1.196.78.366.366.588.728.78 1.196.154.372.33 1.022.388 2.072.062 1.204.062 1.6.062 4.69s0 3.486-.062 4.69c-.058 1.18-.234 1.7-.388 2.072-.192.468-.414.83-.78 1.196-.366.366-.588-.728-1.196-.78-.372.154-1.022.33-2.072.388-1.204.062-1.6.062-4.69.062s-3.486 0-4.69-.062c-1.18-.058-1.7-.234-2.072-.388-.468-.192-.83-.414-1.196-.78-.366-.366-.588-.728-.78-1.196-.154-.372-.33-1.022-.388-2.072-.062-1.204-.062-1.6-.062-4.69s0-3.486.062-4.69c.058-1.18.234-1.7.388-2.072.192-.468.414-.83.78-1.196.366-.366.728-.588 1.196-.78.372-.154 1.022-.33 2.072-.388 1.204-.062 1.6-.062 4.69-.062zm0 3.84c-3.193 0-5.16 1.967-5.16 5.16s1.967 5.16 5.16 5.16 5.16-1.967 5.16-5.16-1.967-5.16-5.16-5.16zm0 2.2c1.62 0 2.96 1.34 2.96 2.96s-1.34 2.96-2.96 2.96-2.96-1.34-2.96-2.96 1.34-2.96 2.96-2.96zm6.31-2.98c0 .54-.44 1.06-.98 1.06s-1.02-.52-1.02-1.06.44-1.06.98-1.06 1.02.52 1.02 1.06z"/></svg>
+                            Instagram
+                        </h3>
+                        <p class="text-[var(--secondary-color)] text-sm">@narexh</p>
+                    </div>
+                    <svg class="w-4 h-4 text-white transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+                <!-- WhatsApp Card -->
+                <a href="https://wa.me/919916395115?text=Hey%20Naresh,%20I%20need%20a%20video%20editor " target="_blank" class="social-card p-6 rounded-xl flex items-center justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold flex items-center mb-2">
+                            <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.55.36 3.05 1.04 4.4l-1.08 3.96 4.04-1.05c1.3.7 2.76 1.08 4.08 1.08 5.46 0 9.91-4.45 9.91-9.91s-4.45-9.91-9.91-9.91zm-1.89 15.01l-.23-.37c-.75-1.2-1.2-2.73-1.2-4.32 0-3.35 2.73-6.08 6.08-6.08s6.08 2.73 6.08 6.08-2.73 6.08-6.08 6.08c-1.57 0-3.04-.6-4.14-1.63zM12.04 4c4.43 0 8.04 3.61 8.04 8.04s-3.61 8.04-8.04 8.04c-1.33 0-2.58-.33-3.7-.91l-3.82.99 1.01-3.71c-.72-1.12-1.1-2.45-1.1-3.83 0-4.43 3.61-8.04 8.04-8.04zm-1.93 11.2l.62.62c.1.1.25.15.4.15s.3-.05.4-.15l.62-.62c.2-.2.2-.53 0-.73l-.7-.7c-.2-.2-.53-.2-.73 0l-.62.62-.7-.7c-.2-.2-.53-.2-.73 0l-.62.62c-.2.2-.2.53 0 .73l.62.62-.7.7c-.2.2-.2.53 0 .73l.62.62zm-2.49-2.92l.7.7c.2.2.53.2.73 0l.62-.62.7.7c.2.2.53.2.73 0l.62-.62.7.7c.2.2.53.2.73 0l.62-.62.7.7c.2.2.53.2.73 0l.62-.62c.2-.2.2-.53 0-.73l-.62-.62.7-.7c.2-.2.2-.53 0-.73l-.62-.62-.7-.7c-.2-.2-.53-.2-.73 0l-.62.62c-.2.2-.2.53 0 .73l-.62-.62-.7-.7c-.2-.2-.53-.2-.73 0l-.62.62-.7-.7c-.2-.2-.53-.2-.73 0l-.62.62-.7-.7c-.2-.2-.53-.2-.73 0z"/></svg>
+                            WhatsApp
+                        </h3>
+                        <p class="text-[var(--secondary-color)] text-sm">+91 9916395115</p>
+                    </div>
+                    <svg class="w-4 h-4 text-white transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+                <!-- Twitter (X) Card -->
+                <a href="https://x.com/pyNaresh" target="_blank" class="social-card p-6 rounded-xl flex items-center justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold flex items-center mb-2">
+                            <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.144h3.68L15.341 9.94L23.951 22.846h-7.653L10.027 14.15l-5.467 8.696H.886l8.807-13.62L0 1.144h8.216l5.068 7.234zM16.92 21.684h2.51l-9.157-12.16H7.76l9.16 12.16z"/></svg>
+                            Twitter
+                        </h3>
+                        <p class="text-[var(--secondary-color)] text-sm">@pyNaresh</p>
+                    </div>
+                    <svg class="w-4 h-4 text-white transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+            </div>
+        </section>
+
+        <footer class="pt-8 pb-8 text-center text-sm text-[var(--secondary-color)]">
+            <p class="mb-4">&copy; 2025 Naresh Choudhary. All rights reserved.</p>
+            <a href="#hero" class="text-[var(--secondary-color)] hover:text-[var(--accent-color)] transition-all duration-300 ease-in-out flex items-center justify-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform rotate-180" viewBox="0 0 24 24" fill="currentColor"><path d="M12 18l-6-6 1.41-1.41L12 15.17l4.59-4.58L18 12z"/></svg>
+                <span>Back to Top</span>
+            </a>
+        </footer>
+    </main>
+    
+    <!-- Placeholder for Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Main JavaScript for interactions and animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Lazy Loading for YouTube Videos ---
+            const videoIframes = document.querySelectorAll('.lazy-video');
+            const options = {
+                rootMargin: '200px 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const iframe = entry.target;
+                        const videoSrc = iframe.getAttribute('data-src');
+                        if (videoSrc) {
+                            iframe.src = videoSrc;
+                            iframe.removeAttribute('data-src');
+                        }
+                        observer.unobserve(iframe);
+                    }
+                });
+            }, options);
+
+            videoIframes.forEach(iframe => {
+                observer.observe(iframe);
+            });
+
+            // --- Scroll-triggered Fade-up Animations ---
+            const fadeUpElements = document.querySelectorAll('.fade-up-element');
+            const observerOptions = {
+                rootMargin: '0px 0px -100px 0px', // Trigger when 100px from the bottom of the viewport
+            };
+
+            const elementObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            fadeUpElements.forEach(el => {
+                elementObserver.observe(el);
+            });
+
+            // --- Portfolio Underline Animation ---
+            const portfolioTitle = document.querySelector('.title-underline');
+            const titleObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        titleObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            titleObserver.observe(portfolioTitle);
+
+
+            // --- Horizontal Carousel Scrolling ---
+            const carousel = document.getElementById('carousel');
+            const scrollLeftBtn = document.getElementById('scrollLeft');
+            const scrollRightBtn = document.getElementById('scrollRight');
+
+            if (carousel) {
+                // Smooth scroll logic for buttons
+                scrollLeftBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: -carousel.offsetWidth * 0.8, behavior: 'smooth' });
+                });
+                scrollRightBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: carousel.offsetWidth * 0.8, behavior: 'smooth' });
+                });
+                
+                // Mouse drag to scroll
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+                
+                carousel.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    carousel.classList.add('active');
+                    startX = e.pageX - carousel.offsetLeft;
+                    scrollLeft = carousel.scrollLeft;
+                });
+                carousel.addEventListener('mouseleave', () => {
+                    isDown = false;
+                    carousel.classList.remove('active');
+                });
+                carousel.addEventListener('mouseup', () => {
+                    isDown = false;
+                    carousel.classList.remove('active');
+                });
+                carousel.addEventListener('mousemove', (e) => {
+                    if(!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - carousel.offsetLeft;
+                    const walk = (x - startX) * 2; //scroll-fast
+                    carousel.scrollLeft = scrollLeft - walk;
+                });
+            }
+
+            // --- Parallax Effect for Hero Star ---
+            const parallaxStar = document.getElementById('parallax-star');
+            if (parallaxStar) {
+                window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const baseScale = 2; // Start the star at 2x its original size
+    const scaleFactor = 1 + scrollY * 0.001; // Adjust this to change how much it grows
+    parallaxStar.style.transform = `scale(${baseScale * scaleFactor}) translateY(${scrollY * -0.2}px)`;
+});
+            }
+        });
+    </script>
+</body>
+</html>
